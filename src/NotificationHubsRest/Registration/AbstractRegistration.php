@@ -209,6 +209,7 @@ abstract class AbstractRegistration implements RegistrationInterface
         $this->appendAdditionalNode($descriptionNode);
 
         $this->dom->formatOutput = true;
+        $this->dom->preserveWhiteSpace = false;
 
         return $this->dom->saveXML();
     }

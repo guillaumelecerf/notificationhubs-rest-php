@@ -1,7 +1,22 @@
+sudo: false
+
 language: php
 
-before_script: composer install
+matrix:
+  include:
+    - php: 5.3
+    - php: 5.4
+    - php: 5.5
+    - php: 5.6
+    - php: 7.0
+
+before_script:
+    - composer self-update
+    - composer install
 
 # disable mail notifications
 notifications:
   email: false
+
+git:
+  depth: 30
